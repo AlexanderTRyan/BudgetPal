@@ -141,63 +141,97 @@
       </div>
     </header>
 
-  <!-- Container for the first chart -->
-  <div class="chart-container">
-    <canvas id="pieChart1" width="400" height="400"></canvas>
-  </div>
-  <!-- Container for the second chart -->
-  <div class="chart-container">
-    <canvas id="pieChart2" width="400" height="400"></canvas>
-  </div>
+    <!-- Container for the first chart -->
+    <div class="chart-container">
+      <canvas id="pieChart1" width="400" height="400"></canvas>
+    </div>
+    <!-- Container for the second chart -->
+    <div class="chart-container">
+      <canvas id="pieChart2" width="400" height="400"></canvas>
+    </div>
 
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="chart-container">
+      <canvas id="horizontalBarChart" width="400" height="400"></canvas>
+    </div>
 
-    <main class="px-3">
-      <h1>Budget Your Way</h1>
-      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the
-        text, and add your own fullscreen background photo to make it your own.</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-      </p>
-    </main>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <footer class="mt-auto text-white-50">
-      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
-          href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-    </footer>
-  </div>
-  
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      <main class="px-3">
+        <h1>Budget Your Way</h1>
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the
+          text, and add your own fullscreen background photo to make it your own.</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+        </p>
+      </main>
 
-  <!-- Script to initialize charts -->
-  <script>
-    // Initialize Chart 1
-    var ctx1 = document.getElementById('pieChart1').getContext('2d');
-    var myPieChart1 = new Chart(ctx1, {
-      type: 'pie',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-          data: [300, 50, 100],
-          backgroundColor: ['red', 'blue', 'yellow']
-        }]
-      }
-    });
+      <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+            href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+      </footer>
+    </div>
 
-    // Initialize Chart 2
-    var ctx2 = document.getElementById('pieChart2').getContext('2d');
-    var myPieChart2 = new Chart(ctx2, {
-      type: 'pie',
-      data: {
-        labels: ['Green', 'Purple', 'Orange'],
-        datasets: [{
-          data: [200, 100, 150],
-          backgroundColor: ['green', 'purple', 'orange']
-        }]
-      }
-    });
-  </script>
-  
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to initialize charts -->
+    <script>
+      // Initialize Chart 1
+      var ctx1 = document.getElementById('pieChart1').getContext('2d');
+      var myPieChart1 = new Chart(ctx1, {
+        type: 'pie',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow'],
+          datasets: [{
+            data: [300, 50, 100],
+            backgroundColor: ['red', 'blue', 'yellow']
+          }]
+        }
+      });
+
+      // Initialize Chart 2
+      var ctx2 = document.getElementById('pieChart2').getContext('2d');
+      var myPieChart2 = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+          labels: ['Green', 'Purple', 'Orange'],
+          datasets: [{
+            data: [200, 100, 150],
+            backgroundColor: ['green', 'purple', 'orange']
+          }]
+        }
+      });
+
+      // Initialize Horizontal Bar Chart
+      var ctx3 = document.getElementById('horizontalBarChart').getContext('2d');
+      var myHorizontalBarChart = new Chart(ctx3, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['Bar 1', 'Bar 2', 'Bar 3'],
+          datasets: [{
+            label: 'Dataset',
+            data: [40, 70, 90],
+            backgroundColor: function (context) {
+              var value = context.dataset.data[context.dataIndex];
+              if (value < 50) {
+                return 'green'; // Green when under half
+              } else if (value >= 50 && value < 75) {
+                return 'yellow'; // Yellow when between half and 75%
+              } else {
+                return 'red'; // Red when between 75% and 100%
+              }
+            }
+          }]
+        },
+        options: {
+          scales: {
+            x: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+
 </body>
 
 </html>
