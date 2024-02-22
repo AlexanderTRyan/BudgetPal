@@ -1,28 +1,63 @@
+const categories = [
+    'Housing',
+    'Transportation',
+    'Food',
+    'Healthcare',
+    'Utilities',
+    'Entertainment',
+    'Clothing and Personal Care',
+    'Debt Payments',
+    'Savings and Investments',
+    'Education',
+    'Travel',
+    'Donations',
+    'Insurance',
+    'Taxes',
+    'Miscellaneous'
+];
+
+const colors = [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "purple",
+    "pink",
+    "cyan",
+    "magenta",
+    "lime",
+    "teal",
+    "indigo",
+    "brown",
+    "black",
+    "white",
+    "gray",
+    "lightgray",
+    "darkgray"
+  ];
+
 // Initialize Pie Chart 1
 var ctx1 = document.getElementById('pieChart1').getContext('2d');
-var myPieChart1 = new Chart(ctx1, {
-    type: 'pie',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-            data: [300, 50, 100],
-            backgroundColor: ['red', 'blue', 'yellow']
-        }]
-    }
-});
+generatePieChart(ctx1, [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 40, 100, 20, 50, 120])
+
 
 // Initialize Pie Chart 2
 var ctx2 = document.getElementById('pieChart2').getContext('2d');
-var myPieChart2 = new Chart(ctx2, {
+generatePieChart(ctx2, [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 40, 100, 20, 50, 120]);
+
+function generatePieChart(loc, data) {
+return new Chart(loc, {
     type: 'pie',
     data: {
-        labels: ['Green', 'Purple', 'Orange'],
+        labels: categories,
         datasets: [{
-            data: [200, 100, 150],
-            backgroundColor: ['green', 'purple', 'orange']
+            data: data,
+            backgroundColor: colors 
         }]
     }
-});
+})
+}
 
 function generateHorizontalBar(budget, expenses) {
     // Calculate width percentage
@@ -63,11 +98,8 @@ var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
 // Generate horizontal bars with different values
 var bar1 = generateHorizontalBar(40, 50);
-console.log(bar1);
 var bar2 = generateHorizontalBar(70, 50);
-console.log(bar2)
 var bar3 = generateHorizontalBar(100, 50);
-console.log(bar3);
 
 // Append bars to container
 horizontalBarsContainer.appendChild(bar1);
