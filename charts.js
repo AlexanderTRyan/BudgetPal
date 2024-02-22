@@ -24,9 +24,18 @@ var myPieChart2 = new Chart(ctx2, {
     }
 });
 
-function generateHorizontalBar(value, maxValue, color) {
+function generateHorizontalBar(budget, expenses) {
     // Calculate width percentage
-    var widthPercentage = (value / maxValue) * 100;
+    var widthPercentage = (budget / expenses) * 50;
+
+    let color;
+    if (widthPercentage <= 50) {
+        color = 'green';
+    } else if (widthPercentage <= 75) {
+        color = 'yellow';
+    } else {
+        color = 'red';
+    }
 
     // Create the HTML elements
     var container = document.createElement('div');
@@ -38,8 +47,13 @@ function generateHorizontalBar(value, maxValue, color) {
     filledBar.style.height = '20px';
     filledBar.style.backgroundColor = color;
 
+    var text = document.createElement('div');
+    text.textContent = 'Budget: ' + budget + ', Expenses: ' + expenses;
+
     // Append filled bar to container
     container.appendChild(filledBar);
+    container.appendChild(text);
+
 
     return container;
 }
@@ -48,11 +62,11 @@ function generateHorizontalBar(value, maxValue, color) {
 var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
 // Generate horizontal bars with different values
-var bar1 = generateHorizontalBar(50, 100, 'green');
+var bar1 = generateHorizontalBar(40, 50);
 console.log(bar1);
-var bar2 = generateHorizontalBar(75, 100, 'yellow');
+var bar2 = generateHorizontalBar(70, 50);
 console.log(bar2)
-var bar3 = generateHorizontalBar(90, 100, 'red');
+var bar3 = generateHorizontalBar(100, 50);
 console.log(bar3);
 
 // Append bars to container
