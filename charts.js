@@ -31,7 +31,6 @@ const colors = [
     "indigo",
     "brown",
     "black",
-    "white",
     "gray",
     "lightgray",
     "darkgray"
@@ -64,14 +63,16 @@ return new Chart(loc, {
             tooltip: {
                 enabled: true // Hide the tooltips
             }
-        }
+        },
+        responsive: true // Make chart responsive
+
     }
 })
 }
 
-function generateHorizontalBar(budget, expenses) {
+function generateHorizontalBar(budget, expenses, name) {
     // Calculate width percentage
-    var widthPercentage = (budget / expenses) * 50;
+    var widthPercentage = (expenses / budget) * 50;
 
     let color;
     if (widthPercentage <= 50) {
@@ -82,9 +83,13 @@ function generateHorizontalBar(budget, expenses) {
         color = 'red';
     }
 
+
     // Create the HTML elements
     var container = document.createElement('div');
     container.classList.add('horizontal-bar');
+
+    var categoryName = document.createElement('div');
+    categoryName.textContent = `${name}:`;
 
     var filledBar = document.createElement('div');
     filledBar.classList.add('horizontal-bar');
@@ -93,11 +98,17 @@ function generateHorizontalBar(budget, expenses) {
     filledBar.style.backgroundColor = color;
 
     var text = document.createElement('div');
-    text.textContent = 'Budget: ' + budget + ', Expenses: ' + expenses;
+    text.textContent = `Expenses: ${expenses} Budget: ${budget}`;
+
+    var space = document.createElement('br');
+
+
 
     // Append filled bar to container
+    container.appendChild(categoryName);
     container.appendChild(filledBar);
     container.appendChild(text);
+    container.appendChild(space);
 
 
     return container;
@@ -106,15 +117,9 @@ function generateHorizontalBar(budget, expenses) {
 
 var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
-// Generate horizontal bars with different values
-var bar1 = generateHorizontalBar(40, 50);
-var bar2 = generateHorizontalBar(70, 50);
-var bar3 = generateHorizontalBar(100, 50);
+for (let i = 0; i < categories.length; i++) {
+    var bar = generateHorizontalBar(100,100,categories[i]);
+    horizontalBarsContainer.appendChild(bar);
+}
 
-// Append bars to container
-horizontalBarsContainer.appendChild(bar1);
-horizontalBarsContainer.appendChild(bar2);
-horizontalBarsContainer.appendChild(bar3);
-
-console.log(horizontalBarsContainer);
 
