@@ -55,6 +55,16 @@ return new Chart(loc, {
             data: data,
             backgroundColor: colors 
         }]
+    }, 
+    options: {
+        plugins: {
+            legend: {
+                display: false // Hide the legend
+            },
+            tooltip: {
+                enabled: true // Hide the tooltips
+            }
+        }
     }
 })
 }
