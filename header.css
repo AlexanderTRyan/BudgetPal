@@ -1,0 +1,39 @@
+
+
+  
+  .footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+    height: auto;
+    transition: filter 0.3s;
+  }
+
+  .navbar-brand:hover img {
+    filter: brightness(0.9);
+  }
+
+  .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+  }
+
+  .nav-link:hover {
+    color: #ffc107 !important;
+  }
+
+  .navbar-brand:hover {
+    filter: brightness(0.6);
+    /* Darker color when hovered over */
+  }
