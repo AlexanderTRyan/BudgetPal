@@ -34,7 +34,7 @@ const colors = [
     "gray",
     "lightgray",
     "darkgray"
-  ];
+];
 
 // Initialize Pie Chart 1
 var ctx1 = document.getElementById('pieChart1').getContext('2d');
@@ -46,29 +46,40 @@ var ctx2 = document.getElementById('pieChart2').getContext('2d');
 generatePieChart(ctx2, [200, 10, 300, 200, 250, 30, 330, 200, 600, 500, 40, 100, 20, 50, 120]);
 
 function generatePieChart(loc, data) {
-return new Chart(loc, {
-    type: 'pie',
-    data: {
-        labels: categories,
-        datasets: [{
-            data: data,
-            backgroundColor: colors 
-        }]
-    }, 
-    options: {
-        plugins: {
-            legend: {
-                display: false // Hide the legend
-            },
-            tooltip: {
-                enabled: true // Hide the tooltips
-            }
+    return new Chart(loc, {
+        type: 'pie',
+        data: {
+            labels: categories,
+            datasets: [{
+                data: data,
+                backgroundColor: colors
+            }]
         },
-        responsive: true // Make chart responsive
-
-    }
-})
+        options: {
+            plugins: {
+                legend: {
+                    display: false // Hide the legend
+                },
+                tooltip: {
+                    enabled: true
+                },
+                datalabels: {
+                    display: true, // Display labels
+                    color: 'black', // Set label color
+                    formatter: (value, ctx) => {
+                        var label = ctx.chart.data.labels[ctx.dataIndex];
+                        return label + ': ' + value;
+                    }
+                }
+            },
+            responsive: true // Make chart responsive
+        }
+        
+        
+    });
 }
+
+
 
 function generateHorizontalBar(budget, expenses, name) {
     // Calculate width percentage
@@ -118,7 +129,7 @@ function generateHorizontalBar(budget, expenses, name) {
 var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
 for (let i = 0; i < categories.length; i++) {
-    var bar = generateHorizontalBar(100,100,categories[i]);
+    var bar = generateHorizontalBar(100, 100, categories[i]);
     horizontalBarsContainer.appendChild(bar);
 }
 
