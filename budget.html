@@ -42,8 +42,13 @@
     }
 
     .navbar-brand img {
-      width: 30px;
+      width: 40px;
       height: auto;
+      transition: filter 0.3s;
+    }
+
+    .navbar-brand:hover img {
+      filter: brightness(0.9);
     }
 
     .nav-link {
@@ -53,6 +58,11 @@
 
     .nav-link:hover {
       color: #ffc107 !important;
+    }
+
+    .navbar-brand:hover {
+      filter: brightness(0.6);
+      /* Darker color when hovered over */
     }
 
     .page {
@@ -94,8 +104,10 @@
   <header class="header">
     <div class="container">
       <nav class="navbar">
-        <a class="navbar-brand" href="./index.html">
-          <img src="./house-fill.svg" alt="Home">
+        <a class="navbar-brand" href="./index.html"
+          style="color: white; font-family: 'Arial Black', sans-serif; font-weight: bold;">
+          <img src="./piggy-bank-fill.svg" alt="Home">
+          BudgetPal
         </a>
         <ul class="nav justify-content-end">
           <li class="nav-item">
@@ -140,6 +152,3 @@
 
   <!-- Script to initialize charts -->
   <script src="./charts.js"></script>
-</body>
-
-</html>
