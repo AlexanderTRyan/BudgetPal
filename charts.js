@@ -13,54 +13,18 @@ function updateCharts(JSONtoken) {
 
     // Initialize Pie Chart 1
     var ctx1 = document.getElementById('pieChart1').getContext('2d');
-    generatePieChart(ctx1, JSONtoken.budget)
+    generatePieChart(ctx1, JSONtoken.budget, JSONtoken.categories, JSONtoken.colors)
 
 
     // Initialize Pie Chart 2
     var ctx2 = document.getElementById('pieChart2').getContext('2d');
-    generatePieChart(ctx2, JSONtoken.expenses);
+    generatePieChart(ctx2, JSONtoken.expenses, JSONtoken.categories, JSONtoken.colors);
 
 }
-const categories = [
-    'Housing',
-    'Transportation',
-    'Food',
-    'Healthcare',
-    'Utilities',
-    'Entertainment',
-    'Clothing and Personal Care',
-    'Debt Payments',
-    'Savings and Investments',
-    'Education',
-    'Travel',
-    'Donations',
-    'Insurance',
-    'Taxes',
-    'Miscellaneous'
-];
-
-const colors = [
-    "red",
-    "blue",
-    "green",
-    "yellow",
-    "orange",
-    "purple",
-    "pink",
-    "cyan",
-    "magenta",
-    "lime",
-    "teal",
-    "indigo",
-    "brown",
-    "black",
-    "gray",
-    "lightgray",
-    "darkgray"
-];
 
 
-function generatePieChart(loc, data) {
+
+function generatePieChart(loc, data, categories, colors) {
     return new Chart(loc, {
         type: 'pie',
         data: {
