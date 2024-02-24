@@ -1,3 +1,26 @@
+fetch("./input.json")
+    .then(response => response.json())
+    .then(JSONtoken => updateCharts(JSONtoken));
+
+function updateCharts(JSONtoken) {
+    var horizontalBarsContainer = document.getElementById('horizontalBarChart');
+
+    for (let i = 0; i < JSONtoken.categories.length; i++) {
+        var bar = generateHorizontalBar(JSONtoken.budget[i], JSONtoken.expenses[i], JSONtoken.categories[i]);
+        horizontalBarsContainer.appendChild(bar);
+
+    }
+
+    // Initialize Pie Chart 1
+    var ctx1 = document.getElementById('pieChart1').getContext('2d');
+    generatePieChart(ctx1, JSONtoken.budget)
+
+
+    // Initialize Pie Chart 2
+    var ctx2 = document.getElementById('pieChart2').getContext('2d');
+    generatePieChart(ctx2, JSONtoken.expenses);
+
+}
 const categories = [
     'Housing',
     'Transportation',
@@ -36,14 +59,6 @@ const colors = [
     "darkgray"
 ];
 
-// Initialize Pie Chart 1
-var ctx1 = document.getElementById('pieChart1').getContext('2d');
-generatePieChart(ctx1, [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 40, 100, 20, 50, 120])
-
-
-// Initialize Pie Chart 2
-var ctx2 = document.getElementById('pieChart2').getContext('2d');
-generatePieChart(ctx2, [200, 10, 300, 200, 250, 30, 330, 200, 600, 0, 40, 100, 20, 50, 120]);
 
 function generatePieChart(loc, data) {
     return new Chart(loc, {
@@ -74,8 +89,8 @@ function generatePieChart(loc, data) {
             },
             responsive: true // Make chart responsive
         }
-        
-        
+
+
     });
 }
 
@@ -123,14 +138,6 @@ function generateHorizontalBar(budget, expenses, name) {
 
 
     return container;
-}
-
-
-var horizontalBarsContainer = document.getElementById('horizontalBarChart');
-
-for (let i = 0; i < categories.length; i++) {
-    var bar = generateHorizontalBar(100, 100, categories[i]);
-    horizontalBarsContainer.appendChild(bar);
 }
 
 
