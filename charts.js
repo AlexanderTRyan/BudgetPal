@@ -43,7 +43,7 @@ generatePieChart(ctx1, [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 40, 100
 
 // Initialize Pie Chart 2
 var ctx2 = document.getElementById('pieChart2').getContext('2d');
-generatePieChart(ctx2, [200, 10, 300, 200, 250, 30, 330, 200, 600, 500, 40, 100, 20, 50, 120]);
+generatePieChart(ctx2, [200, 10, 300, 200, 250, 30, 330, 200, 600, 0, 40, 100, 20, 50, 120]);
 
 function generatePieChart(loc, data) {
     return new Chart(loc, {
