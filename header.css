@@ -1,39 +1,63 @@
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
 
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  /* Ensures clicks go through to the link */
+}
 
-  
-  .footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
+.nav-link:hover .bg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity as needed */
+}
 
-  .header {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px;
-  }
+.link-text {
+  position: relative;
+  z-index: 1;
+}
 
-  .navbar-brand img {
-    width: 40px;
-    height: auto;
-    transition: filter 0.3s;
-  }
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-  .navbar-brand:hover img {
-    filter: brightness(0.9);
-  }
+.header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+}
 
-  .nav-link {
-    color: #fff !important;
-    text-transform: uppercase;
-  }
+.navbar-brand img {
+  width: 40px;
+  height: auto;
+  transition: filter 0.3s;
+}
 
-  .nav-link:hover {
-    color: #ffc107 !important;
-  }
+.navbar-brand:hover img {
+  filter: brightness(0.9);
+}
 
-  .navbar-brand:hover {
-    filter: brightness(0.6);
-    /* Darker color when hovered over */
-  }
+.nav-link {
+  color: #fff !important;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.navbar-brand:hover {
+  filter: brightness(0.6);
+  /* Darker color when hovered over */
+}
