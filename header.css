@@ -35,11 +35,10 @@
 .header {
   background-color: #343a40;
   color: #fff;
-  padding: 20px;
 }
 
 .navbar-brand img {
-  width: 40px;
+  width: 35px;
   height: auto;
   transition: filter 0.3s;
 }
