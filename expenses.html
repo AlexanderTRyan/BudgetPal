@@ -28,6 +28,8 @@
 
   <!-- Custom CSS -->
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./header.css" rel="stylesheet">
+  <script src="expenses.js"></script>
 
   <style>
     .pie-chart-container {
@@ -67,13 +69,24 @@
 
 <body>
   <header class="header">
-    <div>
-      <h3 class="float-md-start mb-0"><a href="./index.html" class="btn btn-link text-decoration-none"><img
-            src="./house-fill.svg" alt="Home" width="50" height="30"></a></h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="./budget.html">See Budget</a>
-        <a class="nav-link fw-bold py-1 px-0" href="./editBudget.html">Edit Budget</a>
-        <a class="nav-link fw-bold py-1 px-0" href="./expenses.html">Input Expenses</a>
+    <div class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="./index.html"
+          style="color: white; font-family: 'Arial Black', sans-serif; font-weight: bold;">
+          <img src="./piggy-bank-fill.svg" alt="Home">
+          BudgetPal
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./budget.html">See Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./editBudget.html">Edit Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./expenses.html">Input Expenses</a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -83,20 +96,20 @@
     <div class="container">
       <div>
         <p> Housing Payment</p>
-        <input type="text" name="Housing">
+        <input type="number" name="Housing" value="0" step="1">
       </div>
       <div>
         <p>Transportation Spending</p>
-        <input type="text" name="Transportation">
+        <input type="number" name="Transportation" value="0" step="1">
       </div>
       <div>
         <p>Food Spending</p>
-        <input type="text" name="Food">
+        <input type="number" name="Food" value="0" step="1">
       </div>
 
       <div>
         <p>Utilities Payment</p>
-        <input type="text" name="Utilities">
+        <input type="number" name="Utilities" value="0" step="1">
       </div>
     </div>
 
@@ -104,20 +117,20 @@
     <div class="container">
       <div>
         <p>Entertainment Spending</p>
-        <input type="text" name="Entertainment">
+        <input type="number" name="Entertainment" value="0" step="1">
       </div>
       <div>
         <p>Clothing and Personal Care</p>
-        <input type="text" name="Clothing">
+        <input type="number" name="Clothing" value="0" step="1">
       </div>
       <div>
         <p>Debt Payments</p>
-        <input type="text" name="Debt">
+        <input type="number" name="Debt" value="0" step="1">
       </div>
 
       <div>
         <p>Saving and Investments</p>
-        <input type="text" name="Saving">
+        <input type="number" name="Saving" value="0" step="1">
       </div>
     </div>
 
@@ -125,53 +138,44 @@
     <div class="container">
       <div>
         <p>Education</p>
-        <input type="text" name="Education">
+        <input type="number" name="Education" value="0" step="1">
       </div>
       <div>
         <p>Travel</p>
-        <input type="text" name="Travel">
+        <input type="number" name="Travel" value="0" step="1">
       </div>
       <div>
         <p>Donations</p>
-        <input type="text" name="Donations">
+        <input type="number" name="Donations" value="0" step="1">
       </div>
 
       <div>
         <p>Insurance</p>
-        <input type="text" name="Utilities">
+        <input type="number" name="Insurance" value="0" step="1">
       </div>
     </div>
 
     <div class="container">
       <div>
         <p>Taxes</p>
-        <input type="text" name="Taxes">
+        <input type="number" name="Taxes" value="0" step="1">
       </div>
       <div>
         <p>Miscellaneous</p>
-        <input type="text" name="Miscellaneous">
+        <input type="number" name="Miscellaneous" value="0" step="1">
       </div>
+    </div>
+
+    <div class="container">
+      <form id="budgetUpdateForm">
+        <button type="button" onclick="getInputValue();">Click Here to Update Budget</button>
+      </form>
     </div>
 
 
   
 
 
-    <!-- 'Housing',
-    'Transportation',
-    'Food',
-    'Healthcare',
-    'Utilities',
-    'Entertainment',
-    'Clothing and Personal Care',
-    'Debt Payments',
-    'Savings and Investments',
-    'Education',
-    'Travel',
-    'Donations',
-    'Insurance',
-    'Taxes',
-    'Miscellaneous' -->
   <footer class="mt-auto text-white-50">
   
   </footer>
