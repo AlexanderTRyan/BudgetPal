@@ -13,18 +13,18 @@
 }
 
 
-.container {
+.inputContainer {
   display: flex;
   text-align: center;
   margin-top: 50px;
   justify-content: center;
 }
 
-.container > div {
+.inputContainer > div {
   margin-right: 50px; /* Adjust the spacing between elements */
 }
 
-.container > div:last-child {
+.inputContainer > div:last-child {
   margin-right: 0; /* Remove margin from the last element */
 }
 

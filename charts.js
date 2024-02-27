@@ -1,8 +1,10 @@
+
 fetch("./input.json")
     .then(response => response.json())
     .then(JSONtoken => updateCharts(JSONtoken));
 
 function updateCharts(JSONtoken) {
+
     var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
     for (let i = 0; i < JSONtoken.categories.length; i++) {
