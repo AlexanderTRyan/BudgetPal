@@ -68,3 +68,19 @@ body {
   margin-top: 20px;
 }
 
+.budget-message-container {
+  padding-top: 14%;
+  display: inline-block;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px; /* Adjust margin as needed */
+}
+
+.budget-message {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}

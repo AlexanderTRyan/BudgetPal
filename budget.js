@@ -26,27 +26,27 @@ get(child(dbReft, 'expenses')).then((snapshot1) => {
     get(child(dbReft, 'budget')).then((snapshot2) => {
         let budgetData = snapshot2.val();
         updateCharts(expensesData, budgetData);
-    });    
+    });
 });
 
-    let colors = [
-        "#1f77b4",
-        "#ff7f0e",
-        "#2ca02c",
-        "#d62728",
-        "#9467bd",
-        "#8c564b",
-        "#e377c2",
-        "#7f7f7f",
-        "#bcbd22",
-        "#17becf",
-        "#aec7e8",
-        "#ffbb78",
-        "#98df8a",
-        "#ff9896",
-        "#c5b0d5",
-        "#c49c94"
-      ]
+let colors = [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f",
+    "#bcbd22",
+    "#17becf",
+    "#aec7e8",
+    "#ffbb78",
+    "#98df8a",
+    "#ff9896",
+    "#c5b0d5",
+    "#c49c94"
+]
 
 function updateCharts(expensesJSON, budgetJSON) {
 
@@ -79,6 +79,28 @@ function updateCharts(expensesJSON, budgetJSON) {
     }
     generatePieChart(ctx2, expenses, Object.keys(expensesJSON), colors);
     document.getElementById('expensesTotalValue').innerText = `Total: $${expensesTotal}`;
+
+    // Calculate the difference between planned budget and actual expenses
+    let budgetDifference = plannedTotal - expensesTotal;
+
+    // Select the budget message container
+    let budgetMessage = document.getElementById('budgetMessage');
+
+    // Insert the message based on the difference
+    if (budgetDifference < 0) {
+        // If over budget
+        budgetMessage.innerHTML = `You are over budget by $${-budgetDifference}.`;
+        budgetMessage.style.color = '#dc3545'; // Set message color to red
+    } else if (budgetDifference > 0) {
+        // If under budget
+        budgetMessage.innerHTML = `You are under budget by $${budgetDifference}.`;
+        budgetMessage.style.color = '#28a745'; // Set message color to green
+    } else {
+        // If on budget
+        budgetMessage.innerHTML = `You are on budget.`;
+        budgetMessage.style.color = '#28a745'; // Set message color to green
+
+    }
 
 
 }
