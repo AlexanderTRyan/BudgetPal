@@ -95,7 +95,7 @@ function getInputValue() {
     }
 
 
-    set(ref(db, 'expenses/'), expenses)
+    set(ref(db, 'budget/'), expenses)
         .then(() => {
             alert("Data was added");
         })
@@ -114,7 +114,7 @@ function getInputValue() {
 function updateData(){
 
     const dbRef = ref(db);
-    get(child(dbRef, 'expenses')).then((snapshot) => {
+    get(child(dbRef, 'budget/')).then((snapshot) => {
         let data = snapshot.val();
         console.log(data);
 

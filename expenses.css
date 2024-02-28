@@ -28,3 +28,17 @@
   margin-right: 0; /* Remove margin from the last element */
 }
 
+#updateBudgetBtn:hover {
+  color: #ffc107 !important;
+}
+
+#updateBudgetBtn {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
