@@ -1,7 +1,34 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-fetch("./input.json")
-    .then(response => response.json())
-    .then(JSONtoken => updateCharts(JSONtoken));
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDnE2w_gRYor0QojhhwdJsgYRdhHNSAFKo",
+  authDomain: "budgetpal-d5300.firebaseapp.com",
+  projectId: "budgetpal-d5300",
+  storageBucket: "budgetpal-d5300.appspot.com",
+  messagingSenderId: "239286381091",
+  appId: "1:239286381091:web:da422f4475d4a9bd9b5f96"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase();
+
+// Read data from a specific path
+db.ref('expenses/').once('Travel')
+    .then((snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+    })
+    .catch((error) => {
+        // Handle errors
+    });
 
 function updateCharts(JSONtoken) {
 
