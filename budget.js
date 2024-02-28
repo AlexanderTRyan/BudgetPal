@@ -177,13 +177,20 @@ function generateHorizontalBar(budget, expenses, name) {
 
     var space = document.createElement('br');
 
+    var notationBars = document.createElement('div');
+    notationBars.innerHTML = `<div class="notation" style="left: 25%;"></div>
+    <div class="notation" style="left: 50%;"></div>
+    <div class="notation" style="left: 75%;"></div>`;
 
 
     // Append filled bar to container
+   
     container.appendChild(categoryName);
+    container.appendChild(notationBars);
     container.appendChild(filledBar);
     container.appendChild(text);
     container.appendChild(space);
+    
 
 
     return container;
