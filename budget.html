@@ -29,39 +29,7 @@
   <!-- Custom CSS -->
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="./header.css" rel="stylesheet">
-  <style>
-    
-    body {
-      background-color: #f8f9fa;
-      color: #343a40;
-      font-family: Arial, sans-serif;
-    }
-
-    .page {
-      margin-top: 50px;
-    }
-
-
-    .pie-chart-container {
-      width: 40%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .pie-chart-container h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: #007bff;
-    }
-
-    .bar-chart-container {
-      padding: 20px;
-      padding-top: 50%;
-      padding-left: 1%;
-    }
-  </style>
-
- 
+  <link href="./budget.css" rel="stylesheet">
 
 
   <!-- Custom styles for this template -->
@@ -105,16 +73,19 @@
       <div class="pie-chart-container" style="float: left;">
         <h2>Planned Budget</h2>
         <canvas id="pieChart1" width="50" height="50"></canvas>
+        <div id="plannedTotalValue"></div>
       </div>
 
       <div class="pie-chart-container" style="float: right;">
         <h2>Actual Expenses</h2>
         <canvas id="pieChart2" width="50" height="50"></canvas>
+        <div id="expensesTotalValue"></div>
       </div>
     </div>
 
     <div class="container">
       <div class="bar-chart-container" id="horizontalBarChart">
+        <h2>Expenses by Category</h2>
       </div>
     </div>
   </div>
@@ -122,8 +93,7 @@
   <footer class="footer">
     <div class="container">
       <p>© 2024 BudgetPal. All rights reserved
-         by <a
-          href="https://github.com/AlexanderTRyan" class="text-white">@AlexanderTRyan</a> and <a
+        by <a href="https://github.com/AlexanderTRyan" class="text-white">@AlexanderTRyan</a> and <a
           href="https://github.com/seth1proctor" class="text-white">@Seth1Proctor</a>.</p>
     </div>
   </footer>
@@ -132,7 +102,7 @@
   <script type="module" src="./budget.js"></script>
 
   </script>
- 
+
 </body>
 
 </html>

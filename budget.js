@@ -61,19 +61,25 @@ function updateCharts(expensesJSON, budgetJSON) {
     // Initialize Pie Chart 1
     var ctx1 = document.getElementById('pieChart1').getContext('2d');
     let budget = [];
+    let plannedTotal = 0;
     for (let key in budgetJSON) {
         budget.push(budgetJSON[key]);
+        plannedTotal += parseInt(budgetJSON[key]);
     }
     generatePieChart(ctx1, budget, Object.keys(budgetJSON), colors)
-
+    document.getElementById('plannedTotalValue').innerText = `Total: $${plannedTotal}`;
 
     // Initialize Pie Chart 2
     var ctx2 = document.getElementById('pieChart2').getContext('2d');
     let expenses = [];
+    let expensesTotal = 0;
     for (let key in expensesJSON) {
         expenses.push(expensesJSON[key]);
+        expensesTotal += parseInt(expensesJSON[key]);
     }
     generatePieChart(ctx2, expenses, Object.keys(expensesJSON), colors);
+    document.getElementById('expensesTotalValue').innerText = `Total: $${expensesTotal}`;
+
 
 }
 
@@ -120,12 +126,14 @@ function generateHorizontalBar(budget, expenses, name) {
     var widthPercentage = Math.min((expenses / budget) * 50, 100);
 
     let color;
-    if (widthPercentage <= 50) {
-        color = 'green';
+    if (widthPercentage <= 25) {
+        color = '#007bff';
+    } else if (widthPercentage <= 50) {
+        color = '#28a745';
     } else if (widthPercentage <= 75) {
-        color = 'yellow';
+        color = '#ffc107';
     } else {
-        color = 'red';
+        color = '#dc3545';
     }
 
 
@@ -139,7 +147,7 @@ function generateHorizontalBar(budget, expenses, name) {
     var filledBar = document.createElement('div');
     filledBar.classList.add('horizontal-bar');
     filledBar.style.width = widthPercentage + '%';
-    filledBar.style.height = '20px';
+    filledBar.style.height = '50px';
     filledBar.style.backgroundColor = color;
 
     var text = document.createElement('div');
