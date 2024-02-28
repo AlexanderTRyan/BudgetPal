@@ -99,9 +99,6 @@ function getInputValue() {
 
 
     set(ref(db, 'expenses/'), expenses)
-        .then(() => {
-            alert("Data was added");
-        })
         .catch((error) => {
             alert("Unsuccessful");
             console.log(error);
@@ -133,9 +130,7 @@ function updateData() {
                 // Update the input field value with data from Firebase
                 if (data.hasOwnProperty(currCategory)) {
                     inputField.value = data[currCategory];
-                    console.log(inputField.value);
                     totalSpending += parseInt(inputField.value);
-                    console.log(totalSpending);
                 } else {
                     console.error("Category not found in data:", currCategory);
                 }

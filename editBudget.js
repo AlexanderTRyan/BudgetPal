@@ -96,9 +96,6 @@ function getInputValue() {
 
 
     set(ref(db, 'budget/'), expenses)
-        .then(() => {
-            alert("Data was added");
-        })
         .catch((error) => {
             alert("Unsuccessful");
             console.log(error);
