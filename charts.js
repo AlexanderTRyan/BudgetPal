@@ -1,53 +1,79 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDnE2w_gRYor0QojhhwdJsgYRdhHNSAFKo",
-  authDomain: "budgetpal-d5300.firebaseapp.com",
-  projectId: "budgetpal-d5300",
-  storageBucket: "budgetpal-d5300.appspot.com",
-  messagingSenderId: "239286381091",
-  appId: "1:239286381091:web:da422f4475d4a9bd9b5f96"
+    apiKey: "AIzaSyDnE2w_gRYor0QojhhwdJsgYRdhHNSAFKo",
+    authDomain: "budgetpal-d5300.firebaseapp.com",
+    projectId: "budgetpal-d5300",
+    storageBucket: "budgetpal-d5300.appspot.com",
+    messagingSenderId: "239286381091",
+    appId: "1:239286381091:web:da422f4475d4a9bd9b5f96"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase();
+const dbReft = ref(db);
 
-// Read data from a specific path
-db.ref('expenses/').once('Travel')
-    .then((snapshot) => {
-        const data = snapshot.val();
-        console.log(data);
-    })
-    .catch((error) => {
-        // Handle errors
-    });
+get(child(dbReft, 'expenses')).then((snapshot1) => {
+    let expensesData = snapshot1.val();
+    get(child(dbReft, 'budget')).then((snapshot2) => {
+        let budgetData = snapshot2.val();
+        updateCharts(expensesData, budgetData);
+    });    
+});
 
-function updateCharts(JSONtoken) {
+    let colors = [
+        "#1f77b4",
+        "#ff7f0e",
+        "#2ca02c",
+        "#d62728",
+        "#9467bd",
+        "#8c564b",
+        "#e377c2",
+        "#7f7f7f",
+        "#bcbd22",
+        "#17becf",
+        "#aec7e8",
+        "#ffbb78",
+        "#98df8a",
+        "#ff9896",
+        "#c5b0d5",
+        "#c49c94"
+      ]
+
+function updateCharts(expensesJSON, budgetJSON) {
 
     var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
-    for (let i = 0; i < JSONtoken.categories.length; i++) {
-        var bar = generateHorizontalBar(JSONtoken.budget[i], JSONtoken.expenses[i], JSONtoken.categories[i]);
+    for (let key in expensesJSON) {
+        var bar = generateHorizontalBar(budgetJSON[key], expensesJSON[key], key);
         horizontalBarsContainer.appendChild(bar);
 
     }
 
     // Initialize Pie Chart 1
     var ctx1 = document.getElementById('pieChart1').getContext('2d');
-    generatePieChart(ctx1, JSONtoken.budget, JSONtoken.categories, JSONtoken.colors)
+    let budget = [];
+    for (let key in budgetJSON) {
+        budget.push(budgetJSON[key]);
+    }
+    generatePieChart(ctx1, budget, Object.keys(budgetJSON), colors)
 
 
     // Initialize Pie Chart 2
     var ctx2 = document.getElementById('pieChart2').getContext('2d');
-    generatePieChart(ctx2, JSONtoken.expenses, JSONtoken.categories, JSONtoken.colors);
+    let expenses = [];
+    for (let key in expensesJSON) {
+        expenses.push(expensesJSON[key]);
+    }
+    generatePieChart(ctx2, expenses, Object.keys(expensesJSON), colors);
 
 }
 
