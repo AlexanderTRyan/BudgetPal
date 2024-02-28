@@ -42,3 +42,19 @@
   border-radius: 5px;
 }
 
+
+.buttonDiv{
+  padding-bottom: 20px;
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#total{
+  display: flex;
+  text-align: center;
+  margin-top: 50px;
+  justify-content: center;
+}
+

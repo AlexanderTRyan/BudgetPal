@@ -11,3 +11,41 @@
   background-color: rgba(112.520718, 44.062154, 249.437846, .15);
   border: 1px solid rgba(112.520718, 44.062154, 249.437846, .3);
 }
+
+
+.inputContainer {
+  display: flex;
+  text-align: center;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.inputContainer > div {
+  margin-right: 50px; /* Adjust the spacing between elements */
+}
+
+.inputContainer > div:last-child {
+  margin-right: 0; /* Remove margin from the last element */
+}
+
+#updateBudgetBtn:hover {
+  color: #ffc107 !important;
+}
+
+#updateBudgetBtn {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.buttonDiv{
+  padding-bottom: 20px;
+  display: flex;
+  text-align: center;
+  margin-top: 50px;
+  justify-content: center;
+}
