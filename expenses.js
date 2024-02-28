@@ -93,7 +93,7 @@
         }
 
         
-        set(ref(db, 'Expenses/'), expenses)
+        set(ref(db, 'expenses/'), expenses)
           .then(() => {
             alert("Data was added");
           })
