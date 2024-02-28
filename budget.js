@@ -117,7 +117,7 @@ function generatePieChart(loc, data, categories, colors) {
 
 function generateHorizontalBar(budget, expenses, name) {
     // Calculate width percentage
-    var widthPercentage = (expenses / budget) * 50;
+    var widthPercentage = Math.min((expenses / budget) * 50, 100);
 
     let color;
     if (widthPercentage <= 50) {
