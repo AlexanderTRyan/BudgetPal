@@ -185,7 +185,6 @@ fetch("./data.JSON")
 function loadImages(myImages) {
     for (let j = 0; j < categories.length; j++) {
         let currentCat = categories[j];
-        var mainContainer = document.getElementById(categoriesFroms[j]);
 
         console.log(currentCat);
 
@@ -193,11 +192,12 @@ function loadImages(myImages) {
 
                 let image = myImages[currentCat][i].img;
                 let text = myImages[currentCat][i].text;
+                let width = myImages[currentCat][i].width;
 
                 let formElement = document.getElementById(categoriesFroms[j]);
                 let imageElement = document.createElement('img');
                 imageElement.src = image;
-                imageElement.style.width = "50px";
+                imageElement.style.width = width;
                 imageElement.style.height = "50px";
 
                 // Construct the HTML Element
@@ -213,4 +213,3 @@ function loadImages(myImages) {
         }
     }
 
-// Budget screen move the text to the left side of the bar graph. Make the text a little bigger. Make the text font-family: cursive

@@ -2,91 +2,106 @@
     "Housing":[
         {
             "img": "./Images/home.png",
-            "text": "Housing Payment"
+            "text": "Housing Payment",
+            "width": "50px"
         }
     ],
     "Transportation":[
         {
             "img": "./Images/transportation.png",
-            "text": "Transportation Spending"
+            "text": "Transportation Spending",
+            "width": "50px"
         }
     ],
     "Food":[
         {
             "img": "./Images/food.png",
-            "text": "Food Spending"
+            "text": "Food Spending",
+            "width": "50px"
         }
     ],
     "Healthcare":[
         {
             "img": "./Images/healthcare.png",
-            "text": "Healthcare"
+            "text": "Healthcare",
+            "width": "50px"
         }
     ],
     "Utilities":[
         {
             "img": "./Images/utility.png",
-            "text": "Utilities Payment"
+            "text": "Utilities Payment",
+            "width": "50px"
         }
     ],
     "Entertainment":[
         {
             "img": "./Images/entertainment.png",
-            "text": "Entertainment Spending"
+            "text": "Entertainment Spending",
+            "width": "50px"
         }
     ],
     "Clothing and Personal Care":[
         {
             "img": "./Images/clothing.png",
-            "text": "Clothing and Personal Care"
+            "text": "Clothing and Personal Care",
+            "width": "50px"
         }
     ],
     "Debt Payments":[
         {
             "img": "./Images/debt.png",
-            "text": "Debt Payment"
+            "text": "Debt Payment",
+            "width": "50px"
         }
     ],
     "Savings and Investments":[
         {
             "img": "./Images/saving.png",
-            "text": "Savings and Investments"
+            "text": "Savings and Investments",
+            "width": "50px"
         }
     ],
     "Education":[
         {
             "img": "./Images/education.png",
-            "text": "Education"
+            "text": "Education",
+            "width": "50px"
         }
     ],
     "Travel":[
         {
             "img": "./Images/travel.png",
-            "text": "Travel"
+            "text": "Travel",
+            "width": "50px"
         }
     ],
     "Donations":[
         {
             "img": "./Images/donation.png",
-            "text": "Donations"
+            "text": "Donations",
+            "width": "50px"
         }
     ],
     "Insurance":[
         {
             "img": "./Images/insurance.png",
-            "text": "Insurance"
+            "text": "Insurance",
+            "width": "50px"
         }
     ],
     "Taxes":[
         {
             "img": "./Images/taxes.png",
-            "text": "Taxes"
+            "text": "Taxes",
+            "width": "50px"
         }
     ],
     "Miscellaneous":[
         {
             "img": "./Images/miscellaneous.png",
-            "text": "Miscellaneous"
+            "text": "Miscellaneous",
+            "width": "50px"
         }
     ]
 }
