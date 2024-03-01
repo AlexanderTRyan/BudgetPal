@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-fetch("./images.JSON")
+fetch("./data.JSON")
     .then(response => response.json())
     .then(myImages => loadImages(myImages));
 
