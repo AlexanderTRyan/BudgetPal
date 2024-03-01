@@ -19,6 +19,8 @@ body {
 
 .title {
     text-align: center;
+    padding: 20px;
+    font-family: cursive;
 }
 
 
@@ -45,10 +47,13 @@ body {
 
 .author-text {
     margin-left: 10px;
+    font-family: cursive;
+
 }
 
 .bio {
     margin-top: 50px;
+    font-family: cursive;
     flex-grow: 1; /* Allow bio paragraph to expand */
 }
 
@@ -58,16 +63,12 @@ body {
     white-space: nowrap; /* Prevent the name from wrapping */
     overflow: hidden; /* Hide overflow if the name is too long */
     text-overflow: ellipsis; /* Add ellipsis if the name is truncated */
+    font-family: cursive;
 }
 .author div {
     margin-bottom: 10px; /* Adjust margin for spacing */
 }
 
-.author::after {
-    content: '';
-    position: absolute;
-    top: 310%;
-    left: 0;
-    right: 0;
-    border-top: 1px solid #ccc; /* Line color */
+p {
+    font-family: cursive;
 }
