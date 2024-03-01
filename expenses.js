@@ -72,7 +72,6 @@ let budgetCVS = "";
 
 function getInputValue() {
     budgetArray = [];
-    budgetCVS = "Category,Value\n";
     const expenses = {};
 
     for (let i = 0; i < categories.length; i++) {
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-fetch("./images.JSON")
+fetch("./data.JSON")
     .then(response => response.json())
     .then(myImages => loadImages(myImages));
 
@@ -207,9 +206,11 @@ function loadImages(myImages) {
                 let textElement = document.createElement('p');
                 textElement.textContent = text;
                 textElement.style.paddingTop = "10px";
+                textElement.style.fontFamily = "cursive"
                 formElement.insertAdjacentElement('beforebegin', textElement);
                 
             }
         }
     }
 
+// Budget screen move the text to the left side of the bar graph. Make the text a little bigger. Make the text font-family: cursive
