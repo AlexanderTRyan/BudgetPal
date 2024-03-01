@@ -50,6 +50,7 @@ let colors = [
 
 function updateCharts(expensesJSON, budgetJSON) {
 
+
     var horizontalBarsContainer = document.getElementById('horizontalBarChart');
 
     for (let key in expensesJSON) {
@@ -101,6 +102,11 @@ function updateCharts(expensesJSON, budgetJSON) {
         budgetMessage.style.color = '#28a745'; // Set message color to green
 
     }
+
+    var totalHorizontalBarChart = document.getElementById('totalHorizontalBarChart');
+    var bar = generateHorizontalBar(plannedTotal, expensesTotal, "Total");
+    totalHorizontalBarChart.appendChild(bar);
+
 
 
 }
