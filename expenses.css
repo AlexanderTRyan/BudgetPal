@@ -67,8 +67,9 @@ body {
 
 .page {
   flex: 1;
+  font-family: cursive;
 }
-
+/* 
 .footer {
   position: fixed;
   bottom: 0;
@@ -77,4 +78,4 @@ body {
   color: white;
   text-align: center;
   padding: 20px 0;
-}
+} */
