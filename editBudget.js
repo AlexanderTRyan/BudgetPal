@@ -22,7 +22,7 @@ import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/fireb
 
 const db = getDatabase();
 
-updateData().then(() => {
+updateData('budget').then(() => {
     calculateTotal();
 });
 
@@ -111,10 +111,10 @@ function getInputValue() {
 
 
 //Calls from the database and populates that input fields with the value. 
-function updateData() {
+function updateData(field) {
     return new Promise((resolve, reject) => {
         const dbRef = ref(db);
-        get(child(dbRef, 'budget')).then((snapshot) => {
+        get(child(dbRef, field)).then((snapshot) => {
             let data = snapshot.val();
             console.log(data);
 
@@ -185,8 +185,6 @@ fetch("./data.JSON")
 function loadImages(myImages) {
     for (let j = 0; j < categories.length; j++) {
         let currentCat = categories[j];
-        var mainContainer = document.getElementById(categoriesFroms[j]);
-
         console.log(currentCat);
 
         for (let i = 0; i < myImages[currentCat].length; i++) {
@@ -222,3 +220,29 @@ function loadImages(myImages) {
           dropdownContent.style.display = "none";
         }
       });
+
+      document.getElementById("preset1").addEventListener("click", function() {
+        totalSpending = 0;
+        updateData('preset1').then(() => {
+            calculateTotal();
+        });
+    });
+    
+    document.getElementById("preset2").addEventListener("click", function() {
+        totalSpending = 0;
+        updateData('preset2').then(() => {
+            calculateTotal();
+        });
+    });
+    
+    document.getElementById("preset3").addEventListener("click", function() {
+        totalSpending = 0;
+        updateData('preset3').then(() => {
+            calculateTotal();
+        });
+    });
+
+
+
+
+      
