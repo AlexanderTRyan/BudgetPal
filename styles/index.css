@@ -26,7 +26,7 @@ body {
 
 /* Add styles for the authors */
 .author {
-    width: 80%; /* Adjust the width as needed */
+    width: 90%; /* Adjust the width as needed */
     margin: 30px; /* Adjust margin for spacing */
     display: flex;
 }
@@ -37,7 +37,7 @@ body {
     margin-right: 20px;
     border: 2px solid #ccc; /* Add border around the pictures */
     padding: 5px; /* Add padding to the border */
-    min-width: 39%;
+    min-width: 35%;
 }
 
 .author img {
@@ -53,7 +53,7 @@ body {
 }
 
 .bio {
-    margin-top: 50px;
+    margin-top: 20px;
     font-family: cursive;
     flex-grow: 1; /* Allow bio paragraph to expand */
 }
