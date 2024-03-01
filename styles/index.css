@@ -37,6 +37,7 @@ body {
     margin-right: 20px;
     border: 2px solid #ccc; /* Add border around the pictures */
     padding: 5px; /* Add padding to the border */
+    min-width: 39%;
 }
 
 .author img {
@@ -72,3 +73,26 @@ body {
 p {
     font-family: cursive;
 }
+
+.informationDiv {
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #dee2e6; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .informationDiv h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40; /* Dark text color */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+  }
+  
+  .informationDiv p {
+    font-size: 16px;
+    color: #6c757d; /* Medium dark text color */
+    line-height: 1.6; /* Line height for better readability */
+  }
