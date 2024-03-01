@@ -37,6 +37,7 @@ body {
     margin-right: 20px;
     border: 2px solid #ccc; /* Add border around the pictures */
     padding: 5px; /* Add padding to the border */
+    min-width: 39%;
 }
 
 .author img {
