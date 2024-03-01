@@ -52,7 +52,7 @@ let categories = [
 
 let categoriesFroms = [
     "housingForm",
-    "transportationFrom",
+    "transportationForm",
     "foodForm",
     "healthcareForm",
     "utilitiesForm",
@@ -130,6 +130,7 @@ function updateData() {
                 // Update the input field value with data from Firebase
                 if (data.hasOwnProperty(currCategory)) {
                     inputField.value = data[currCategory];
+                    console.log(inputField.value);
                     totalSpending += parseInt(inputField.value);
                 } else {
                     console.error("Category not found in data:", currCategory);
@@ -145,13 +146,70 @@ function updateData() {
 }
 
 function calculateTotal() {
-    let spot = document.getElementById("total");
-    console.log(totalSpending);
-    let division = document.createElement("div");
-    division.innerHTML = `
-    <h3> Your total is ${totalSpending} </h3>`;
+    let initialTotalDiv = document.getElementById("total");
 
-    console.log(division);
-
-    spot.appendChild(division);
+    initialTotalDiv.textContent = "Total: $" + totalSpending.toFixed(2);
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all input elements
+    const inputFields = document.querySelectorAll("input[type='number']");
+
+    // Select the total div
+    const totalDiv = document.getElementById("total");
+
+    // Function to update total
+    function updateTotal() {
+        let total = 0;
+        inputFields.forEach((input) => {
+            if (!isNaN(input.value) && input.value !== "") {
+                total += parseInt(input.value);
+            }
+        });
+        totalDiv.textContent = "Total: $" + total.toFixed(2); // Display total in the format you want
+    }
+
+    // Add event listeners to all input fields
+    inputFields.forEach((input) => {
+        input.addEventListener("input", updateTotal);
+    });
+
+});
+
+
+
+fetch("./images.JSON")
+    .then(response => response.json())
+    .then(myImages => loadImages(myImages));
+
+function loadImages(myImages) {
+    for (let j = 0; j < categories.length; j++) {
+        let currentCat = categories[j];
+        var mainContainer = document.getElementById(categoriesFroms[j]);
+
+        console.log(currentCat);
+
+        for (let i = 0; i < myImages[currentCat].length; i++) {
+
+                let image = myImages[currentCat][i].img;
+                let text = myImages[currentCat][i].text;
+
+                let formElement = document.getElementById(categoriesFroms[j]);
+                let imageElement = document.createElement('img');
+                imageElement.src = image;
+                imageElement.style.width = "50px";
+                imageElement.style.height = "50px";
+
+                // Construct the HTML Element
+                formElement.insertAdjacentElement('beforebegin', imageElement);
+
+                let textElement = document.createElement('p');
+                textElement.textContent = text;
+                textElement.style.paddingTop = "10px";
+                formElement.insertAdjacentElement('beforebegin', textElement);
+                
+            }
+        }
+    }
+
