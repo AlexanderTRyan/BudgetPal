@@ -18,6 +18,9 @@ body {
   font-family: Arial, sans-serif;
   ;
 }
+p {
+  font-family: cursive;
+}
 
 .page {
   margin-top: 50px;
@@ -115,3 +118,29 @@ body {
 .notation:nth-child(1) { left: 25%; }
 .notation:nth-child(2) { left: 50%; }
 .notation:nth-child(3) { left: 75%; }
+
+.informationDiv {
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 75px;
+  background-color: #f8f9fa; /* Light gray background */
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-family: cursive;
+
+}
+
+.informationDiv h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #343a40; /* Dark text color */
+  margin-bottom: 10px; /* Space between heading and paragraph */
+}
+
+
+.informationDiv p {
+  font-size: 16px;
+  color: #6c757d; /* Medium dark text color */
+  line-height: 1.6; /* Line height for better readability */
+}
