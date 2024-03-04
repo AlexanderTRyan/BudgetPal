@@ -193,12 +193,14 @@ function loadImages(myImages) {
                 let image = myImages[currentCat][i].img;
                 let text = myImages[currentCat][i].text;
                 let width = myImages[currentCat][i].width;
+                let alt = myImages[currentCat][i].width.alt;
 
                 let formElement = document.getElementById(categoriesFroms[j]);
                 let imageElement = document.createElement('img');
                 imageElement.src = image;
                 imageElement.style.width = width;
                 imageElement.style.height = "50px";
+                imageElement.style.alt = alt;
 
                 // Construct the HTML Element
                 formElement.insertAdjacentElement('beforebegin', imageElement);

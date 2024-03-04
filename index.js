@@ -29,6 +29,7 @@ function loadImages(myImages) {
         for (let i = 0; i < myImages[currentCat].length; i++) {
             let image = myImages[currentCat][i].img;
             let text = myImages[currentCat][i].text + " - " + myImages[currentCat][i].desc;
+            let alt = myImages[currentCat][i].alt;
 
             // Create a container div for each category
             let categoryContainer = document.createElement('div');
@@ -40,6 +41,7 @@ function loadImages(myImages) {
             imageElement.src = image;
             imageElement.style.width = "50px";
             imageElement.style.height = "50px";
+            imageElement.style.alt = alt;
             categoryContainer.appendChild(imageElement);
 
             // Create a div for text to ensure it's displayed next to the image

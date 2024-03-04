@@ -2,6 +2,7 @@
     "Housing":[
         {
             "img": "./Images/home.png",
+            "alt": "house",
             "text": "Housing Payment",
             "width": "50px",
             "desc": "Expenses related to housing payments, including rent or mortgage payments, property taxes, and homeowner's insurance."
@@ -10,6 +11,7 @@
     "Transportation":[
         {
             "img": "./Images/transportation.png",
+            "alt": "car",
             "text": "Transportation Spending",
             "width": "50px",
             "desc": "Expenses related to transportation, such as fuel costs, public transit fares, vehicle maintenance, and parking fees."
@@ -18,6 +20,7 @@
     "Food":[
         {
             "img": "./Images/food.png",
+            "alt": "fork and spoon",
             "text": "Food Spending",
             "width": "50px",
             "desc": "Expenses related to food purchases, including groceries, dining out, and snacks."
@@ -26,6 +29,7 @@
     "Healthcare":[
         {
             "img": "./Images/healthcare.png",
+            "alt": "heart",
             "text": "Healthcare",
             "width": "50px",
             "desc": "Expenses related to healthcare, including health insurance premiums, medical bills, prescriptions, and co-pays."
@@ -34,6 +38,7 @@
     "Utilities":[
         {
             "img": "./Images/utility.png",
+            "alt": "utility",
             "text": "Utilities Payment",
             "width": "50px",
             "desc": "Expenses related to utility bills, including electricity, gas, water, internet, and phone services."
@@ -42,6 +47,7 @@
     "Entertainment":[
         {
             "img": "./Images/entertainment.png",
+            "alt": "popcorn",
             "text": "Entertainment Spending",
             "width": "50px",
             "desc": "Expenses related to entertainment, such as movie tickets, streaming subscriptions, concerts, and recreational activities."
@@ -50,6 +56,7 @@
     "Clothing and Personal Care":[
         {
             "img": "./Images/clothing.png",
+            "alt": "shirt",
             "text": "Clothing and Personal Care",
             "width": "50px",
             "desc": "Expenses related to clothing purchases, shoes, accessories, as well as personal care items like toiletries, cosmetics, and haircuts."
@@ -58,6 +65,7 @@
     "Debt Payments":[
         {
             "img": "./Images/debt.png",
+            "alt": "coin",
             "text": "Debt Payment",
             "width": "50px",
             "desc": "Expenses related to debt repayment, including credit card payments, loan payments, and other outstanding debts."
@@ -66,6 +74,7 @@
     "Savings and Investments":[
         {
             "img": "./Images/saving.png",
+            "alt": "piggy bank",
             "text": "Savings and Investments",
             "width": "50px",
             "desc": "Expenses related to savings contributions and investments, such as retirement savings, investment accounts, and contributions to savings goals."
@@ -74,6 +83,7 @@
     "Education":[
         {
             "img": "./Images/education.png",
+            "alt": "cap",
             "text": "Education",
             "width": "50px",
             "desc": "Expenses related to education, including tuition fees, textbooks, school supplies, and educational resources."
@@ -82,6 +92,7 @@
     "Travel":[
         {
             "img": "./Images/travel.png",
+            "alt": "plane",
             "text": "Travel",
             "width": "50px",
             "desc": "Expenses related to travel, such as airfare, hotel accommodations, transportation costs, and travel activities."
@@ -90,6 +101,7 @@
     "Donations":[
         {
             "img": "./Images/donation.png",
+            "alt": "money",
             "text": "Donations",
             "width": "50px",
             "desc": "Expenses related to charitable donations and contributions to nonprofit organizations."
@@ -98,6 +110,7 @@
     "Insurance":[
         {
             "img": "./Images/insurance.png",
+            "alt": "shield",
             "text": "Insurance",
             "width": "50px",
             "desc": "Expenses related to insurance premiums, including health insurance, car insurance, home insurance, and other types of insurance coverage."
@@ -106,6 +119,7 @@
     "Taxes":[
         {
             "img": "./Images/taxes.png",
+            "alt": "theft",
             "text": "Taxes",
             "width": "50px",
             "desc": "Expenses related to taxes, including income taxes, property taxes, sales taxes, and other tax liabilities."
@@ -114,6 +128,7 @@
     "Miscellaneous":[
         {
             "img": "./Images/miscellaneous.png",
+            "alt": "other",
             "text": "Miscellaneous",
             "width": "50px",
             "desc": "Expenses that do not fit into any specific category, including one-time purchases, unexpected expenses, and other miscellaneous costs."
