@@ -64,7 +64,7 @@
     ],
     "Debt Payments":[
         {
-            "img": "./images/debt.png",
+            "img": "https://github.com/AlexanderTRyan/BudgetPal/blob/main/images/debt.png",
             "alt": "coin",
             "text": "Debt Payment",
             "width": "50px",
