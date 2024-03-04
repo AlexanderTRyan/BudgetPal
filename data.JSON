@@ -1,7 +1,7 @@
 {
     "Housing":[
         {
-            "img": "./Images/home.png",
+            "img": "./images/home.png",
             "alt": "house",
             "text": "Housing Payment",
             "width": "50px",
@@ -10,7 +10,7 @@
     ],
     "Transportation":[
         {
-            "img": "./Images/transportation.png",
+            "img": "./images/transportation.png",
             "alt": "car",
             "text": "Transportation Spending",
             "width": "50px",
@@ -19,7 +19,7 @@
     ],
     "Food":[
         {
-            "img": "./Images/food.png",
+            "img": "./images/food.png",
             "alt": "fork and spoon",
             "text": "Food Spending",
             "width": "50px",
@@ -28,7 +28,7 @@
     ],
     "Healthcare":[
         {
-            "img": "./Images/healthcare.png",
+            "img": "./images/healthcare.png",
             "alt": "heart",
             "text": "Healthcare",
             "width": "50px",
@@ -37,7 +37,7 @@
     ],
     "Utilities":[
         {
-            "img": "./Images/utility.png",
+            "img": "./images/utility.png",
             "alt": "utility",
             "text": "Utilities Payment",
             "width": "50px",
@@ -46,7 +46,7 @@
     ],
     "Entertainment":[
         {
-            "img": "./Images/entertainment.png",
+            "img": "./images/entertainment.png",
             "alt": "popcorn",
             "text": "Entertainment Spending",
             "width": "50px",
@@ -55,7 +55,7 @@
     ],
     "Clothing and Personal Care":[
         {
-            "img": "./Images/clothing.png",
+            "img": "./images/clothing.png",
             "alt": "shirt",
             "text": "Clothing and Personal Care",
             "width": "50px",
@@ -64,7 +64,7 @@
     ],
     "Debt Payments":[
         {
-            "img": "./Images/debt.png",
+            "img": "./images/debt.png",
             "alt": "coin",
             "text": "Debt Payment",
             "width": "50px",
@@ -73,7 +73,7 @@
     ],
     "Savings and Investments":[
         {
-            "img": "./Images/saving.png",
+            "img": "./images/saving.png",
             "alt": "piggy bank",
             "text": "Savings and Investments",
             "width": "50px",
@@ -82,7 +82,7 @@
     ],
     "Education":[
         {
-            "img": "./Images/education.png",
+            "img": "./images/education.png",
             "alt": "cap",
             "text": "Education",
             "width": "50px",
@@ -91,7 +91,7 @@
     ],
     "Travel":[
         {
-            "img": "./Images/travel.png",
+            "img": "./images/travel.png",
             "alt": "plane",
             "text": "Travel",
             "width": "50px",
@@ -100,7 +100,7 @@
     ],
     "Donations":[
         {
-            "img": "./Images/donation.png",
+            "img": "./images/donation.png",
             "alt": "money",
             "text": "Donations",
             "width": "50px",
@@ -109,7 +109,7 @@
     ],
     "Insurance":[
         {
-            "img": "./Images/insurance.png",
+            "img": "./images/insurance.png",
             "alt": "shield",
             "text": "Insurance",
             "width": "50px",
@@ -118,7 +118,7 @@
     ],
     "Taxes":[
         {
-            "img": "./Images/taxes.png",
+            "img": "./images/taxes.png",
             "alt": "theft",
             "text": "Taxes",
             "width": "50px",
@@ -127,7 +127,7 @@
     ],
     "Miscellaneous":[
         {
-            "img": "./Images/miscellaneous.png",
+            "img": "./images/miscellaneous.png",
             "alt": "other",
             "text": "Miscellaneous",
             "width": "50px",
